@@ -1,0 +1,11 @@
+x=int(input())
+z=0
+xx=x
+e=1
+while(z<=x):
+    z=int(input())
+while(x<=z):
+    x+=xx+1
+    xx+=1
+    e+=1
+print(e)
