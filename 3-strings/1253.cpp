@@ -9,22 +9,23 @@ int main()
     cin.clear();
     cin.ignore(2147483647, '\n');
     for(int i=0;i<r;i++){
-        string cesar;
-        int trem[2][50], coiso;
+        string cesar=" ";
+        int coiso=0, e=0;
         getline(cin,cesar);
         cin>>coiso;
+        // 
         cin.clear();
         cin.ignore(2147483647, '\n');
+        // 
         for(int j=0;j<cesar.length();j++){
             int conver=int(cesar[j])-coiso;
             if(conver<65){
-                coiso=int(cesar[j])-int(cesar[j]-coiso);
-                conver=90-coiso;
+                int pasos=int(cesar[j])-65+1;
+                conver=90-(coiso-pasos);
             }
-            trem[0][j]=conver;
+            cout<<char(conver);
         }
-        for(int j=0;j<50;j++){
-            cout<<trem[0][j]<<" ";
-        }
+        cout<<"\n";
     }
+    return 0;
 }

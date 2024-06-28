@@ -1,3 +1,4 @@
+#Resulta em erro de apresentação
 x=int(input())
 for i in range(x):
     txt=[input() for j in range(3)]
