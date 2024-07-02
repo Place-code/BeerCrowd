@@ -1,3 +1,4 @@
+# Tentado
 for i in range(int(input())):
     txt = []
     txt.append(input())
