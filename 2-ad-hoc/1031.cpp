@@ -1,47 +1,45 @@
 #include <iostream>
 #include <vector>
-using namespace std;
 // 
-// 
-int main()
-{
+int main(){
+    int ordem,index,pa;
+    std::vector<int>*posi,trem;
     while(true){
-        int n=0,par=0, andar=0;
-        bool para=false;
-        vector<int> mm;
-        cin>>n;
-        if(n==0){ 
+        std::cin>>ordem;
+        // 
+        std::cin.clear();
+        std::cin.ignore(2147483647,'\n');
+        // 
+        if(ordem<1){
             break;
-        } else{
-            while(true){
-                for(int i=0;i<n;i++){
-                    mm.push_back(i+1);
-                }
-                for(int i=0;i<n;i++){
-                    if(i==n-1 && mm[andar]==13){
-                        para=true;
-                        break;
-                    } else if(i!=n-1 && mm[andar]==13){
-                        break;
-                    }
-                    mm.erase(mm.begin()+andar);
-                    for(int j=0;j<par;j++){
-                        andar+=1;
-                        (andar>=mm.size())?andar-=mm.size():0;
-                    }
-                }
-                if(para==false){
-                    par+=1;
-                }else{
-                    break;
-                }
-                mm.clear();
-                andar=0;
-            }
-            ++par;
-            cout<<par<<endl;
-            n=0;
         }
+        posi=new std::vector<int>;
+        for(int i=0;i<ordem;++i){
+            posi->push_back(i+1);
+        }
+        pa=0;
+        while(true){
+            trem=*posi;
+            trem.erase(trem.begin());
+            index=0;
+            for(int i=ordem-1;i>0;--i){
+                index=(index+pa)%i;
+                trem.erase(trem.begin()+index);
+                // for(auto bgl:trem){
+                //     std::cout<<bgl<<" ";
+                // }
+                // std::cout<<std::endl;
+            }
+            // std::cout<<std::endl;
+            if(trem[0]==13){
+                break;
+            }
+            trem.clear();
+            ++pa;
+        }
+        std::cout<<pa+1<<std::endl;
+        delete posi;
+        posi=NULL;
     }
     return 0;
 }
