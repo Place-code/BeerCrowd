@@ -1,2 +1,6 @@
 # BeerCrowd
-Olá. Este repositório é destinado á exercícios do Beecrowd resolviddos. Caso tenha interesse em compartilhar as suas soluções, contacte com algum dos membros 
+
+<p>Olá! <br> Este repositório é destinado à exercícios resolvidos do Beecrowd.</p>
+
+
+> Caso tenha interesse em compartilhar suas soluções, contate algum dos membros.
