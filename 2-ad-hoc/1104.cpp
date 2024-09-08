@@ -1,59 +1,62 @@
-#include <iostream>
-#include <cstring>
-#include <algorithm>
-#include <vector>
-// 
+#include<iostream>
+#include<vector>
+//
 int main(){
-    int e,e1,e2,index,index_con,posi,esco;
-    bool passa;
-    std::string inp;
-    std::vector<std::vector<int>> cartas;
-    char *split;
-    while(true){
-        posi=0;
-        index=0;
-        index_con=1;
-        e=0;
-        std::cin>>e1>>e2;
-        for(int i=0;i<2;++i){
-            split=new char;
-            std::getline(std::cin,inp);
-            split=std::strtok(&inp[0]," ");
-            cartas.push_back({});
-            while(split!=NULL){
-                cartas[cartas.size()-1].push_back(std::stoi(split));
-                split=std::strtok(NULL," ");
+    std::vector<std::vector<int>>*cartas;
+    char*split;
+    int v[2]={1,1},*v_atual,*v_ant,*e1,*e2,tot,op[2];
+    while(std::cin>>v[0]>>v[1]&&v[0]!=0&&v[1]!=0){
+        cartas=new std::vector<std::vector<int>>(2);
+        for(int j=0;j<2;++j){
+            v_ant=new int(0);
+            v_atual=new int;
+            for(int i=0;i<v[j];++i){
+                std::cin>>*v_atual;
+                if(*v_atual!=*v_ant){cartas->operator[](j).insert(cartas->operator[](j).end(),*v_atual);}
+                *v_ant=*v_atual;
             }
-            inp.clear();
-            delete split;
-            split=NULL;
+            delete v_ant;
+            delete v_atual;
         }
-        if(e1<e2){
-            e1=e2;
-            index=1;
-            index_con=0;
+        if(cartas->operator[](0).size()<=cartas->operator[](1).size()){
+            op[0]=0;
+            op[1]=1;
+        } else{
+            op[1]=0;
+            op[0]=1;
         }
-        for(int i=0;i<e1;++i){
-            passa=true;
-            for(auto j:cartas[index]){
-                if(j==cartas[index_con][e1]){
-                    passa=false;
+        e1=new int(cartas->operator[](op[0]).size()-1);
+        e2=new int(cartas->operator[](op[1]).size()-1);
+        tot=0;
+        for(;*e1>=0&&*e2>=0;){
+            if(cartas->operator[](op[0])[*e1]<cartas->operator[](op[1])[*e2]){
+                --*e2;
+                for(*e2;cartas->operator[](op[0])[*e1]<cartas->operator[](op[1])[*e2]&&*e2>=0;--*e2){}
+                if(cartas->operator[](op[0])[*e1]!=cartas->operator[](op[1])[*e2]){
+                    ++tot;
+                    --*e1;
+                } else{
+                    --*e1;
+                    --*e2;
                 }
-            }
-            if(passa){
-                passa=false;
-                for(auto j:cartas[index_con]){
-                    if(std::find(cartas[index].begin(),cartas[index].end(),j)==cartas[index].end()){
-                        esco=j;
-                        passa=true;
-                    }
+            } else if(cartas->operator[](op[0])[*e1]>cartas->operator[](op[1])[*e2]){
+                for(*e1;cartas->operator[](op[0])[*e1]>cartas->operator[](op[1])[*e2]&&*e1>=0;--*e1){
+                    ++tot;
                 }
-                if(passa){
-                    cartas[index].push_back(esco);
-                    cartas[index_con].push_back
-                }   
-            }
-            ++e;
+                if(cartas->operator[](op[0])[*e1]>cartas->operator[](op[1])[*e2]){
+                    ++tot;
+                } else if(cartas->operator[](op[0])[*e1]==cartas->operator[](op[1])[*e2]){
+                    --*e1;
+                    --*e2;
+                }
+            } else{
+                --*e1;
+                --*e2;
+            }   
         }
+        std::cout<<tot+*e1+1<<std::endl;
+        delete e1,e2;
+        e1=e2=NULL;
     }
+    return 0;
 }
