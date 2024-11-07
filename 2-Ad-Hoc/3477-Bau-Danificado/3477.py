@@ -1,0 +1,2 @@
+lados = list(map(int, input().split()))
+print ("AREA = {:.0f}" .format((lados[2] * lados[1]) / 2 + (3 * ((lados[2] / 2) ** 2) / 2))) if (lados[0] ** 2 == lados[1] ** 2 + lados[2] ** 2) else print ("Nao eh retangulo!")
