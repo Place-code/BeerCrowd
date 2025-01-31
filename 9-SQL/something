@@ -1,0 +1,152 @@
+CREATE ROLE cristiano WITH LOGIN PASSWORD 'Cg#210495';
+\l
+\list
+\list
+CREATE USER cristiano WITH PASSWORD 'Cg#210495';
+ALTER ROLE cristiano WHITH LOGIN
+CREATE DATABASE test
+/l
+\l
+\l
+\q
+CREATE USER chincaro WITH PASSWORD 'Cg#210495';
+ALTER ROLE chincaro WITH LOGIN
+help
+help
+\h
+\?
+ALTER ROLE chincaro WITH LOGIN;
+ALTER ROLE chincaro WITH LOGIN;
+CREATE DATABASE test;
+\l
+\help
+\l
+DATABASE test OWNER chincaro
+DATABASE test OWNER chincaro;
+test OWNER chincaro;
+DROP DATABASE test;
+\l
+CREATE DATABASE test OWNER chincaro;
+\l
+GRANT CONNECT ON DATABASE test to chincaro
+GRANT CONNECT ON DATABASE test TO chincaro;
+\l
+\help
+GRANT;
+GRANT CONNECT ON DATABASE test to chincaro;
+\l
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEM public TO chincaro;
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO chincaro;
+\q
+\q
+CREATE TABLE person(
+id SERIAL PRIMERY KEY,
+name VARCHAR(50);
+age INT;
+);
+\q
+\i run/meida/chincaro/BARRATINHA/programas/git/Bee/Beercrowd/9-SQL/tst.sql
+\i /run/meida/chincaro/BARRATINHA/programas/git/Bee/Beercrowd/9-SQL/tst.sql
+\i //run/meida/chincaro/BARRATINHA/programas/git/Bee/Beercrowd/9-SQL/tst.sql
+\i /run/media/chincaro/BARRATINHA/programas/git/Bee/BeerCrowd/9-SQL
+\i /run/media/chincaro/BARRATINHA/programas/git/Bee/BeerCrowd/9-SQL/tst.sql
+\q
+\q
+\l
+\q
+\c test
+\dt
+\q
+DROP DATABASE test
+\l
+DROP DATABASE test;
+DROP DATABASE test;
+\ls
+\l
+\q
+\dt
+\help
+\dt
+SHOW person
+SHOW person;
+SELECT * FROM person
+SELECT * FROM person;
+SELECT * FROM person;
+INSERT INTO person (name,age,id,favorite_food) VALUES;
+INSERT INTO person (name,age,id,favorite_food) VALUES
+('Cris',15,01907819630,'Manga'),
+('Banguela',6,1,'Carne'
+SELECT * FROM person
+SELECT * FROM person;
+SELECT * FROM person;
+\Q
+\q
+\l
+\c something
+SELECT * FROM person
+;
+CREATE TABLE beautiful_girls(
+name VARCHAR(200),
+number_of_ZapZap VARCHAR(200),
+age int,
+virgin BOOLEAN,
+course VARCHAR(100),
+crazy BOOLEAN,
+);
+\dt
+\q
+\c something
+\dt
+\q
+\dt
+SELECT * FROM person
+;
+\h
+\dt
+SELECT * FROM womans
+;
+INSERT ON womans(name,age,beaultiful,virgin,course) VALUES
+('Sophia_Bali',15,TRUE,0,'DS')
+,
+('Sabryna',16,TRUE,1,'DS'),
+('Isabella',15,TRUE,TRUE,'DS'),
+('Maria_Crivilete',15,TRUE,FALSE,'MEC');
+INSERT INTO womans(name,beaultiful,virgin)
+VALUES
+('Tanaka',TRUE,TRUE),
+('Sophia_bali',TRUE,TRUE),
+('Maria_Crivilete',TRUE,TRUE),
+('Valter',TRUE,TRUE);
+INSERT INTO womans(name,beautiful,virgin) VALUES
+('Valter',TRUE,TRUE),
+('Maria_Crivilete',TRUE,TRUE);
+SELECT * FROM wommans
+;
+SELECT * FROM womans;
+\dt
+SELECT * FROM dt
+;
+SELECT name FROM womans
+;
+DROP VALUE 'Valter' INTO TABLE woman
+;
+DROP 'Valter' INTO TABLE woman
+DROP Valter INTO TABLE woman;
+DROP VALUEs INTO TABLE woman;
+DROP VALUES INTO TABLE woman;
+DROP TABLE woman WITH VAlUES Valter;
+DELETE FROM woman WHERE name='Valter';
+DELETE FROM womans WHERE name='Valter';
+SELETE name FROM womans;
+SELECT name FROM womans;
+SELECT beautiful FROM womans;
+SELECT name beautiful FROM womans;
+SELECT name age FROM womans;
+SELECT name AND age FROM womans;
+SELECT (name,age) FROM womans;
+SELECT name, age FROM womans;
+SELECT name, beautiful FROM womans;
+\q
+/dt
+\l
+\s something -f /run/media/chincaro/BARRATINHA/programas/git/Bee/Beercrowd/9-SQL/test.sql

@@ -1,0 +1,8 @@
+6 7
+Entrada A
+A WUP
+WUP CCC
+CCC *
+* E
+E Entrada
+E Saida
