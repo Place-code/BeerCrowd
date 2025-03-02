@@ -1,2 +1,10 @@
-*.json
-*.exe
+*
+!*/
+!.gitignotr
+!*.c
+!*.cpp
+!*.py
+!*.cs
+!*.hs
+!*.php
+!*.rs
