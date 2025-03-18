@@ -28,5 +28,5 @@ elif [[ $TYPE_FILE = "java" ]];then
 	COMPILE="java"
 fi
 
-echo $COMPILE $FLAGS $PATH_FILE
 $COMPILE $FLAGS $PATH_FILE
+chmod +x $OUT_FILE

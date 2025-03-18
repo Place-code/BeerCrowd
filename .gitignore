@@ -1,6 +1,6 @@
 *
 !*/
-!.gitignotr
+!.gitignore
 !*.c
 !*.cpp
 !*.py
@@ -8,3 +8,5 @@
 !*.hs
 !*.php
 !*.rs
+!*.sh
+!*.sql
